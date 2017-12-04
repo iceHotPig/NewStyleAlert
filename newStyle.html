@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .message{
+            z-index: 10;
+            width: 200px;
+            height: 60px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -100px;
+            display: none;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+        }
+        .message img{
+            display: inline-block;
+            vertical-align: top;
+            width: 40px;
+        }
+        .message span{
+            display: inline-block;
+            vertical-align: top;
+            width: 140px;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn">
+        点击
+    </button>
+    <div class="message"></div>
+</body>
+</html>
+<script src="jquery.js"></script>
+<script>
+     $(document).ready(function () {
+         var sta=false;
+         $('.btn').click(function () {
+             if(sta==false){
+                 $('.message').html('<img src="infonotice.gif" alt="">'+'<span>请阅读并同意会员注册协议和隐私保护政策</span>').show();
+                 setTimeout('jQuery(\'.message\').hide()',3000000)
+                 return false;
+             }
+         });
+     });
+</script>
